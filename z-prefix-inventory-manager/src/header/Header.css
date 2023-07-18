@@ -1,0 +1,13 @@
+#flexcontainerheader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-right: 50%;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid;
+}
+#flexcontainerheader > * {
+  letter-spacing: .1rem;
+  font-size: 28px;
+}

@@ -1,0 +1,8 @@
+#flexcontaineritem {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+#flexcontaineritem > * {
+  padding-bottom: 1rem;
+}
