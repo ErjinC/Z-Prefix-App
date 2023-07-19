@@ -14,9 +14,22 @@ const Item = () => {
     if (list !== '') {
       return (
         <div id='flexcontaineritem'>
-          <div>Item: {list[0].item_name}</div>
-          <div>Quantity: {list[0].quantity}</div>
-          <div>Description: {list[0].description}</div>
+
+          <div id='quality'>
+            <div id='bold'>Item:&nbsp;</div>
+            <div>{list[0].item_name}</div>
+          </div>
+
+          <div id='quality'>
+            <div id='bold'>Quantity:&nbsp;</div>
+            <div>{list[0].quantity}</div>
+          </div>
+
+          <div>
+            <div id='bold'>Description:&nbsp;</div>
+            <div>{list[0].description}</div>
+          </div>
+
         </div>
       )
     }

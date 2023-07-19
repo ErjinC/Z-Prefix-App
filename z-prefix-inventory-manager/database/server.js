@@ -27,6 +27,13 @@ app.get('/item/:id', (request, response) => {
   .then(data => response.status(200).send(data))
 })
 
+app.post('/login', (request, response) => {
+  knex('users')
+  .select('*')
+  .where('username', 'like', request.body[0].username)
+  .then(data => response.status(200).send(data))
+})
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`)
 })

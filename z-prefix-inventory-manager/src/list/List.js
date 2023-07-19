@@ -19,12 +19,28 @@ const List = () => {
           }
           return (
             <div id='flexcontainerlist'>
+
               <div id='flexcontainerminilist'>
-                <div>Item: {item.item_name}</div>
-                <div>Quantity: {item.quantity}</div>
-                <button>More Details</button>
+
+                <div id='quality'>
+                  <div id='bold'>Item:&nbsp;</div>
+                  <div>{item.item_name}</div>
+                </div>
+
+                <div id='quality'>
+                  <div id='bold'>Quantity:&nbsp;</div>
+                  <div>{item.quantity}</div>
+                </div>
+
+                <button onClick={() => window.location=`/item/${item.id}`}>More Details</button>
+
               </div>
-              <div>Description: {shortenedDesc}</div>
+
+              <div>
+                <div id='bold'>Description:&nbsp;</div>
+                <div>{shortenedDesc}</div>
+              </div>
+
             </div>
           )
         })}

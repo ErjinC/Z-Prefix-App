@@ -6,3 +6,6 @@
 #flexcontaineritem > * {
   padding-bottom: 1rem;
 }
+#flexcontaineritem > * {
+  font-size: 20px;
+}

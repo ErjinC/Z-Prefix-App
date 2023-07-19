@@ -9,15 +9,15 @@ const Header = () => {
   return (
     <div id="flexcontainerheader">
 
-      <div>
+      <div onClick={() => window.location=`/`}>
         Home
       </div>
 
-      <div>
+      <div onClick={() => window.location=`/login`}>
         Login
       </div>
 
-      <div>
+      <div onClick={() => window.location=`/register`}>
         Register
       </div>
 
