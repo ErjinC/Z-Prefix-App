@@ -31,7 +31,7 @@ const Login = ({ setToken }) => {
         alert('Login Unsuccessful. Please Try Again!')
       } else {
         setToken(token);
-        window.location='/'
+        window.location='/myinventory'
         alert('Login Successful!')
       }
     }

@@ -31,6 +31,16 @@ const Header = () => {
             }}>
             Create Item
           </div>
+
+          <div onClick={() => {
+            if (!token) {
+              alert('You must login to see your items!')
+            } else {
+              window.location=`/myinventory`
+            }
+            }}>
+            My Inventory
+          </div>
         </div>
 
         <div id='userinfo'>

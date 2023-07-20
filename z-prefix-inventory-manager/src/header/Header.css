@@ -11,7 +11,7 @@
 #flexcontainerbuttons {
   display: flex;
   flex-direction: row;
-  width: 40rem;
+  width: 60rem;
   justify-content: space-between;
 }
 #flexcontainerbuttons > * {

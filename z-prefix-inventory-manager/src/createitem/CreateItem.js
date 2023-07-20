@@ -71,7 +71,7 @@ const Item = () => {
                   }])
                 })
                 .then(data => data.json())
-                .then(window.location=`/`)
+                .then(window.location=`/myinventory`)
                 .then(alert('New Inventory Item Added!'))
               }}}>
             Add Item to Inventory

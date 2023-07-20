@@ -84,6 +84,16 @@ app.patch('/itemedit/:id', (request, response) => {
   })
 })
 
+app.get('/inventory/:id', (request, response) => {
+  console.log(request.params.id)
+  knex('items')
+  .select('*')
+  .where('userid', request.params.id)
+  .then(data => {
+    response.status(200).send(data)
+  })
+})
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`)
 })

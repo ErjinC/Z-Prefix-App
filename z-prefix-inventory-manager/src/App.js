@@ -7,6 +7,7 @@ import Item from './item/Item.js'
 import ItemEdit from './item/ItemEdit.js'
 import Login from './login/Login.js'
 import Register from './register/Register.js'
+import MyInventory from './myinventory/MyInventory.js'
 import CreateItem from './createitem/CreateItem.js'
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 
@@ -29,6 +30,7 @@ function App() {
           <Route path = '/login' element={<Login setToken={setToken}/>} />
           <Route path = '/register' element={<Register />} />
           <Route path = '/createitem' element={<CreateItem />} />
+          <Route path = '/myinventory' element={<MyInventory />} />
         </Routes>
       </div>
     )
