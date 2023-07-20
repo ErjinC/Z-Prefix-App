@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react'
+import useToken from '../useToken.js'
 import './List.css'
 
 const List = () => {
+  const { token } = useToken();
   const [list, setList] = useState('');
   useEffect(() => {
     fetch(`http://localhost:8080/inventory`)
@@ -32,7 +34,21 @@ const List = () => {
                   <div>{item.quantity}</div>
                 </div>
 
-                <button onClick={() => window.location=`/item/${item.id}`}>More Details</button>
+                <div>
+                  <button onClick={() => window.location=`/item/${item.id}`}>More Details</button>
+                  {!token ? <></> :
+                  <>
+                    <button
+                      onClick={() => {
+                        fetch(`http://localhost:8080/${item.id}`, { method: 'DELETE' })
+                        .then(() => alert('Deleted Item!'))
+                      }}
+                    >
+                      Delete Item
+                    </button>
+                  </>
+                }
+                </div>
 
               </div>
 

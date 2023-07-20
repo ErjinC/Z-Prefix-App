@@ -50,6 +50,40 @@ app.post('/register', (request, response) => {
   })
 })
 
+app.post('/createitem', (request, response) => {
+  knex('items')
+  .count('*')
+  .where('item_name', 'ilike', request.body[0].item_name)
+  .then(data => {
+    if (data[0].count > 0) {
+      console.log('Duplicate Entry!')
+    } else {
+      knex('items')
+      .select('*')
+      .insert(request.body)
+      .then(data => response.status(201))
+    }
+  })
+})
+
+app.delete('/:id', (request, response) => {
+  knex('items')
+  .select('*')
+  .where('id', request.params.id )
+  .del()
+  .then(data => response.status(204).send('Item deleted successfully!'))
+})
+
+app.patch('/itemedit/:id', (request, response) => {
+  knex('items')
+  .select('*')
+  .where('id', request.params.id)
+  .update(request.body[0])
+  .then(data => {
+    response.status(201).send('Item Updated!')
+  })
+})
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`)
 })

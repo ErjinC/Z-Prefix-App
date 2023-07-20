@@ -30,6 +30,12 @@ const Item = () => {
             <div>{list[0].description}</div>
           </div>
 
+          <div>
+            <button
+            id='buttonitem'
+              onClick={() => window.location=`/itemedit/${id}`}
+            >Edit Item</button>
+          </div>
         </div>
       )
     }

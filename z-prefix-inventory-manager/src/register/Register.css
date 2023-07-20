@@ -1,22 +1,22 @@
-#flexcontainerlogin {
+#flexcontainerregister {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   padding-top: 2rem;
 }
-#flexcontainerlogin > * {
-  font-size: 18px;
+#flexcontainerregister > * {
+  font-size: 18px
 }
-#loginfield > * {
+#registerfield > * {
   margin: 10px;
 }
-#loginbutton {
+#registerbutton {
   font-size: 16px;
   padding: 2px;
   padding-left: 10px;
   padding-right: 10px;
 }
-#loginheader {
+#registerheader {
   display: flex;
   flex-direction: row;
   justify-content: space-around;

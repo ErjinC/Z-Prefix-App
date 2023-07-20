@@ -26,40 +26,49 @@ const Login = ({ setToken }) => {
         'username': username,
         'password': password
       }]);
-      setToken(token);
-      window.location='/'
+      console.log(token)
+      if (!token.length) {
+        alert('Login Unsuccessful. Please Try Again!')
+      } else {
+        setToken(token);
+        window.location='/'
+        alert('Login Successful!')
+      }
     }
   }
 
   return (
-    <div id='flexcontainerlogin'>
+    <div>
+      <div id='loginheader'>Inventory Manager Login</div>
+      <div id='flexcontainerlogin'>
 
-      <div id='loginfield'>
-        <div>
-          <div>Username</div>
-          <input
-          type='textbox'
-          id='username'
-          onChange={() => {
-            setUsername(document.getElementById('username').value)
-          }}
-          ></input>
+        <div id='loginfield'>
+          <div>
+            <div>Username</div>
+            <input
+            type='textbox'
+            id='username'
+            onChange={() => {
+              setUsername(document.getElementById('username').value)
+            }}
+            ></input>
+          </div>
+
+          <div>
+            <div>Password</div>
+            <input
+            type='password'
+            id='password'
+            onChange={() => {
+              setPassword(document.getElementById('password').value)
+            }}
+            ></input>
+          </div>
+
+          <button id="loginbutton" onClick={handleSubmit}>Login</button>
         </div>
 
-        <div>
-          <div>Password</div>
-          <input
-          type='password'
-          id='password'
-          onChange={() => {
-            setPassword(document.getElementById('password').value)
-          }}
-          ></input>
-        </div>
-
-        <button id="loginbutton" onClick={handleSubmit}>Login</button>
       </div>
-
     </div>
   )
 }
