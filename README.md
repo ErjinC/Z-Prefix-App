@@ -28,14 +28,28 @@ This app fulfills all functionality outlined by the rubric and stories.
   \c z_inventory_manager
   ```
 
-  The first and second commands connects you to the dockerized postgres container, and the third command creates the database. The fourth command is used to connect to that database.
+  The first and second commands connects you to the dockerized postgres container, and the third command creates the database. The fourth command is used to connect to that database. The knexfile is configured so that it looks for a database named 'z_inventory_manager' on port 5432 so please ensure that the database and ports match.
+
 
   To start the database, in a separate terminal, navigate to z-prefix-inventory-manager/database and type `npm run` to start the Express server. This is the API the website communicates with to fetch data. The Express server should be listening on localhost:8080.
+
   To start the website, in a separate terminal, navigate to the z-prefix-inventory-manager folder and type `npm run` to start the React server. This server should run on localhost:3000.
 
 
 ## Operating the Application
+  The homepage shows all items made by all users, but should be blank if the database is empty. Unauthenticated users can only click on Home, Login, and Register. Clicking on Create Item and My Inventory will give an alert stating they should log in first. Your login status is displayed in the header to the right.
 
+  To create an account, click on Register in the header, fill all text fields, and then click the Register button. If you do not fill all the text fields or use a username that already exists, you cannot create the account. If you successfully create the account, an alert should pop up saying "Registration Successful!" and you should be redirected to the login page.
+
+  To login, simply fill in your username and password and click the Login button. Empty fields or incorrect information should result in a corresponding alert message. If you input the correct information, you should get an alert message saying you logged in successfully and you should be redirected to the My Inventory page. This is where all the items the logged in user created is listed.
+
+  To create an item, click on the Create Item button in the header and fill in the corresponding information (item name, quantity, and description). Each text field has a maximum character size, you cannot leave any fields blank, and you cannot add items with the same name. The latter two situations will yield an alert if the user attempts to add the item to their inventory. Once the fields are filled out and the user clicks "Add Item to Inventory", they should receive an alert saying "New Inventory Item Added!" and be redirected to their My Inventory page.
+
+  To edit an item, click on "More Details" on an item in either My Inventory or on the home page. This page provides all the information related to the item and includes an Edit Item button. Clicking the Edit Item button should take the user to a page similar to the Create Item page, but it is autopopulated with the existing item information. Similar to the Create Item page, this page also has maximum character sizes and cannot be left blank. After the changes are made, click on the Apply Changes button. You will get an alert and be taken to the details page of the item where you can review your changes.
+
+  To delete an item, click on Delete Item on an item in either My Inventory or on the home page. Any logged in user can edit and delete items, and unauthenitcated users cannot see the edit and delete buttons.
+
+  Unauthenticated and authenticated users can see all items on the homepage, but only authenticated users can create items, edit/delete items, and access their personal inventory.
 
 # Rubric
   This app fulfills all "exceptional" fields of the rubric.
