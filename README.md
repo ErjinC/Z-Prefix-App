@@ -58,7 +58,7 @@ This app fulfills all functionality outlined by the rubric and stories.
   This app contains all the requested functionality outlined in the stories section of this readme.
 
 ## App-Server Communication
-  This app communicates with the API correctly, and uses GET, POST, PATCH, and DELETE requests to communicate with the database.
+  This app communicates with the API correctly, and uses GET, POST, PATCH, and DELETE requests to communicate with the database. It GETs any time information from an item is rendered, POSTs user registration information and in item creation, PATCHes when items are edited, and DELETEs when you delete an item.
 
 ## Server
   This app has GET, PATCH, POST, and DELETE routes.
