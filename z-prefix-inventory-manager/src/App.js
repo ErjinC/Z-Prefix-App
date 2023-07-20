@@ -11,10 +11,12 @@ import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 function App() {
   const { token, setToken } = useToken();
 
-  if(!token || token === []) {
-    console.log(token)
-    return <Login setToken={setToken} />
-  } else {
+  // if(!token || token === []) {
+  //   console.log(token)
+  //   return (
+  //     <Login setToken={setToken} />
+  //     )
+  // } else {
     return (
       <div>
         <Header />
@@ -26,19 +28,7 @@ function App() {
         </Routes>
       </div>
     )
-  }
+  // }
 }
-//   return (
-//     <div>
-//       <Header />
-//       <Routes>
-//         <Route path = '/' element={<List />} />
-//         <Route path = '/item/:id' element={<Item />} />
-//         <Route path = '/login' element={<Login setToken={setToken}/>} />
-//         <Route path = '/register' element={<Register />} />
-//       </Routes>
-//     </div>
-//   );
-// }
 
 export default App;

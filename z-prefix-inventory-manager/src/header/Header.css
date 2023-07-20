@@ -1,13 +1,25 @@
 #flexcontainerheader {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  padding-right: 50%;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
+  justify-content: space-between;
+  margin: 1rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid;
-}
-#flexcontainerheader > * {
   letter-spacing: .1rem;
   font-size: 28px;
+}
+#flexcontainerbuttons {
+  display: flex;
+  flex-direction: row;
+  width: 40rem;
+  justify-content: space-between;
+}
+#flexcontainerbuttons > * {
+  letter-spacing: .1rem;
+  font-size: 28px;
+  font-weight: bolder;
+}
+#userinfo {
+  font-size: 16px;
+  font-weight: bold;
 }

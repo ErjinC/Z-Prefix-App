@@ -34,6 +34,22 @@ app.post('/login', (request, response) => {
   .then(data => response.status(200).send(data))
 })
 
+app.post('/register', (request, response) => {
+  knex('users')
+  .count('*')
+  .where('username', 'like', request.body[0].username)
+  .then(data => {
+    if (data[0].count > 0) {
+      console.log('Duplicate Entry!')
+    } else {
+      knex('users')
+      .select('*')
+      .insert(request.body)
+      .then(data => response.status(201))
+    }
+  })
+})
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`)
 })

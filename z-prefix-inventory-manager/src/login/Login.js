@@ -19,18 +19,22 @@ const Login = ({ setToken }) => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const token = await loginUser([{
-      'username': username,
-      'password': password
-    }]);
-    console.log(token)
-    setToken(token);
+    if (document.getElementById('username').value === '' || document.getElementById('password').value === '') {
+      alert('Please fill in the username and password fields!')
+    } else {
+      const token = await loginUser([{
+        'username': username,
+        'password': password
+      }]);
+      setToken(token);
+      window.location='/'
+    }
   }
 
   return (
-    <div>
+    <div id='flexcontainerlogin'>
 
-      <div>
+      <div id='loginfield'>
         <div>
           <div>Username</div>
           <input
@@ -45,16 +49,16 @@ const Login = ({ setToken }) => {
         <div>
           <div>Password</div>
           <input
-          type='textbox'
+          type='password'
           id='password'
           onChange={() => {
             setPassword(document.getElementById('password').value)
           }}
           ></input>
         </div>
-      </div>
 
-      <button onClick={handleSubmit}>Login</button>
+        <button id="loginbutton" onClick={handleSubmit}>Login</button>
+      </div>
 
     </div>
   )
