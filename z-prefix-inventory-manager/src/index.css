@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  color: black;
+  background: rgba(249, 245, 231, 0.199);
   font-family: Arial, Helvetica, sans-serif;
 }
 

@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
+import useToken from '../useToken.js'
 import './Item.css'
 
 const Item = () => {
+  const { token } = useToken();
   const [list, setList] = useState('');
   const { id } = useParams();
   useEffect(() => {
@@ -31,10 +33,14 @@ const Item = () => {
           </div>
 
           <div>
-            <button
-            id='buttonitem'
-              onClick={() => window.location=`/itemedit/${id}`}
-            >Edit Item</button>
+            {!token ? <></> :
+              <>
+                <button
+                  id='buttonitem'
+                  onClick={() => window.location=`/itemedit/${id}`}
+                >Edit Item</button>
+              </>
+            }
           </div>
         </div>
       )

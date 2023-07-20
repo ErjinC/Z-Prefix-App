@@ -29,6 +29,7 @@ const ItemEdit = () => {
             <div id='bold'>Item:&nbsp;</div>
             <input
               type='text'
+              maxlength='50'
               id='itemname'
               value={itemName}
               onChange={() => {
@@ -41,6 +42,7 @@ const ItemEdit = () => {
             <div id='bold'>Quantity:&nbsp;</div>
             <input
               type='text'
+              maxlength='10'
               id='quantity'
               value={quantity}
               onChange={() => {
@@ -54,6 +56,7 @@ const ItemEdit = () => {
             <textarea
               type='text'
               id='description'
+              maxlength='250'
               value={description}
               onChange={() => {
                 setDescription(document.getElementById('description').value)

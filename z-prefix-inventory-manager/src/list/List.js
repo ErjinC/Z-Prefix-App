@@ -35,10 +35,16 @@ const List = () => {
                 </div>
 
                 <div>
-                  <button onClick={() => window.location=`/item/${item.id}`}>More Details</button>
+                  <button
+                    id='buttonitem'
+                    onClick={() => window.location=`/item/${item.id}`}
+                    >
+                      More Details
+                  </button>
                   {!token ? <></> :
                   <>
                     <button
+                      id='buttonitem'
                       onClick={() => {
                         fetch(`http://localhost:8080/${item.id}`, { method: 'DELETE' })
                         .then(() => alert('Deleted Item!'))
@@ -60,8 +66,11 @@ const List = () => {
             </div>
           )
         })}
+        <div id='flexcontainerminilist'>Register an account and add something to the database!</div>
       </div>
     )
+  } else {
+    <div>Oops, no data!</div>
   }
 }
 

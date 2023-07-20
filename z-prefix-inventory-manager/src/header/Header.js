@@ -5,7 +5,7 @@ import './Header.css'
 const Header = () => {
   const { token } = useToken();
   return (
-    <div>
+    <div id='headercontainer'>
       <div id='credits'>Created By Erjin Choi</div>
       <div id="flexcontainerheader">
 
