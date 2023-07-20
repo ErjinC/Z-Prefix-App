@@ -3,7 +3,43 @@ Created by Erjin Choi for SDI-17
 
 This app fulfills all functionality outlined by the rubric and stories.
 
+# Instructions: How to Run the Application!
+  This contains the instructions on how to instantiate and operate the application.
+
+## Initializing the Application
+  This application requires a docker container running a postgreSQL image to set-up the database. Please make sure you have Docker installed and set-up on your computer.
+
+  To connect to a dockerized postgres container, please run the following commands in your terminal:
+  ```
+  docker pull postgres
+  mkdir -p $HOME/docker/volumes/postgres
+  docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres
+  docker ps -a
+  ```
+
+  The first command pulls the Dockerized Postgres image from the cloud. The second command creates the directory that houses the database data. The third command starts a Docker Postgres container instance of the pulled image. The fourth command gives you a list of all of your running containers.
+
+  For the next set of commands, replace the `<PSQL-Container-ID>` with the container ID.
+
+  ```
+  docker exec -it <PSQL-Container-ID> bash
+  psql -U postgres
+  CREATE DATABASE z_inventory_manager;
+  \c z_inventory_manager
+  ```
+
+  The first and second commands connects you to the dockerized postgres container, and the third command creates the database. The fourth command is used to connect to that database.
+
+  To start the database, in a separate terminal, navigate to z-prefix-inventory-manager/database and type `npm run` to start the Express server. This is the API the website communicates with to fetch data. The Express server should be listening on localhost:8080.
+  To start the website, in a separate terminal, navigate to the z-prefix-inventory-manager folder and type `npm run` to start the React server. This server should run on localhost:3000.
+
+
+## Operating the Application
+
+
 # Rubric
+  This app fulfills all "exceptional" fields of the rubric.
+
 ## User Interface
   This app contains all the requested functionality outlined in the stories section of this readme.
 
@@ -18,7 +54,6 @@ This app fulfills all functionality outlined by the rubric and stories.
 
 ## Authentication
   The app prevents unauthenticated users from seeing the delete and edit buttons, and does not allow them to access the create item page nor the individual inventory page. Authenticated users can see the delete and edit buttons, and can access the create item page and their personal inventory.
-
 
 
 # Stories
